@@ -148,11 +148,9 @@ async def GroundStation_to_Drone():
                 elif instruction["mission"]=="command":
                     while not MissionPlanner.q.empty():
                         MissionPlanner.q.get()
-                    m=Mission("running","Emergency","demo.py",instruction["requirements"])
+                    m=Mission("running","Emergency","dem o.py",instruction["requirements"])
                     MissionPlanner.priority_assigner(m)
                     MissionPlanner.q.put((m.priority,m))
-
-
 
             elif instruction["type"]=="mission":
                 if instruction["mission"]=="shooting":
